@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #A8D0E6, #FFE156); /* Soft study-like gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .login-box {
+    background: #ffffff; /* Clean white background for the form */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    width: 350px;
+  }
+  
+  h2 {
+    color: #4B89B4; /* Cool blue for a calm, focused feeling */
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  
+  .textbox {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .textbox input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #4B89B4; /* Matching blue border for inputs */
+    border-radius: 8px;
+    background-color: #f0f9ff; /* Light blue background for input fields */
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .textbox input:focus {
+    border-color: #5C6BC0; /* Slightly darker blue on focus */
+    box-shadow: 0 0 8px rgba(92, 107, 192, 0.3); /* Soft blue glow */
+  }
+  
+  input[type="submit"] {
+    background-color: #5C6BC0; /* Calming blue button */
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3F51B5; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #4B89B4;
+  }
+  
+  p a {
+    color: #4B89B4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  p a:hover {
+    color: #3F51B5; /* Darker blue on hover */
+  }

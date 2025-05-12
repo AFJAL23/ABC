@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abc Learning - Homepage</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #111;
+      --card-bg: #fff;
+      --card-border: #ddd;
+    }body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: #1e1e1e;
+  --card-border: #333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #888;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1001;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--card-border);
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu.show {
+  transform: translateX(0);
+}
+
+.side-menu h3 {
+  margin-top: 0;
+}
+
+.side-menu a {
+  display: block;
+  margin: 10px 0;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.edit-profile {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#profile-form {
+  display: none;
+  margin-top: 10px;
+}
+
+#profile-pic-preview {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .icon {
+    font-size: 30px;
+  }
+}
+
+  </style>
+</head>
+<body><button class="menu-button" onclick="toggleMenu()">☰</button> <button class="toggle" onclick="toggleDarkMode()">Toggle Mode</button>
+
+  <div class="side-menu" id="sideMenu">
+    <h3>Edit Profile 🖊</h3>
+    <div class="edit-profile" onclick="toggleProfileForm()">Click to Edit</div>
+    <div id="profile-form">
+      <input type="file" id="profile-pic" accept="image/*" onchange="previewPic()"/>
+      <img id="profile-pic-preview" src="default-dp.png" alt="DP Preview"/>
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Phone Number">
+    </div>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="#">Watch Hour</a>
+    <a href="#">Class Progress</a>
+    <a href="#">Sign Out</a>
+  </div>  <div class="container">
+    <h2>Classes</h2>
+    <div class="grid">
+      <a href="class8.html" class="card-link">
+        <div class="card">
+          <div class="icon">📘</div>
+          <div>8th Class</div>
+        </div>
+      </a>
+      <a href="#" class="card-link">
+        <div class="card">
+          <div class="icon">📗</div>
+          <div>9th Class</div>
+        </div>
+      </a>
+      <a href="#" class="card-link">
+        <div class="card">
+          <div class="icon">📙</div>
+          <div>10th Class</div>
+        </div>
+      </a>
+    </div><h2>Practice</h2>
+<div class="grid">
+  <a href="practice8.html" class="card-link">
+    <div class="card">
+      <div class="icon">✍</div>
+      <div>8th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">✍</div>
+      <div>9th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">✍</div>
+      <div>10th Class</div>
+    </div>
+  </a>
+</div>
+
+<h2>Get Book</h2>
+<div class="grid">
+  <a href="book.html" class="card-link">
+    <div class="card">
+      <div class="icon">📚</div>
+      <div>8th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">📚</div>
+      <div>9th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">📚</div>
+      <div>10th Class</div>
+    </div>
+  </a>
+</div>
+
+<h2>Get Help</h2>
+<div class="grid">
+  <a href="help.html" class="card-link">
+    <div class="card">
+      <div class="icon">❓</div>
+      <div>8th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">❓</div>
+      <div>9th Class</div>
+    </div>
+  </a>
+  <a href="#" class="card-link">
+    <div class="card">
+      <div class="icon">❓</div>
+      <div>10th Class</div>
+    </div>
+  </a>
+</div>
+
+  </div>  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("show");
+    }
+
+    function toggleProfileForm() {
+      const form = document.getElementById("profile-form");
+      form.style.display = form.style.display === "none" ? "block" : "none";
+    }
+
+    function previewPic() {
+      const file = document.getElementById("profile-pic").files[0];
+      const preview = document.getElementById("profile-pic-preview");
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = () => preview.src = reader.result;
+        reader.readAsDataURL(file);
+      }
+    }
+  </script></body>
+</html>

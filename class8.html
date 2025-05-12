@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 8 Educational Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9faff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .hidden {
+      display: none;
+    }
+    .back-btn {
+      margin-top: 20px;
+      background: #0066cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: #004b99;
+    }
+    a {
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    a:hover {
+      color: #004b99;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Class 8 - Educational Platform</h1>
+
+  <!-- Subject Section -->
+  <div id="subject-section" class="grid">
+    <div class="card" onclick="showChapters('science')">Science</div>
+    <div class="card" onclick="showChapters('math')">Math</div>
+    <div class="card" onclick="showChapters('sst')">Social Studies</div>
+  </div>
+
+  <!-- Chapter Section -->
+  <div id="chapter-section" class="hidden">
+    <h2 id="chapter-title"></h2>
+    <div id="chapter-list" class="grid"></div>
+    <button class="back-btn" onclick="goBackToSubjects()">Back to Subjects</button>
+  </div>
+
+  <!-- Script to Handle Navigation -->
+  <script>
+    const chapters = {
+      science: {
+        title: "Science Chapters",
+        items: {
+          "Crop Production and Management": "#",
+          "Microorganisms: Friend and Foe": "https://youtu.be/GHxgSxg7x1I?si=du0p3NV2ah012MbO",
+          "Synthetic Fibres and Plastics": "#",
+          "Materials: Metals and Non-Metals": "#",
+          "Coal and Petroleum": "#",
+          "Combustion and Flame": "#",
+          "Conservation of Plants and Animals": "#",
+          "Cell – Structure and Functions": "#",
+          "Reproduction in Animals": "#"
+        }
+      },
+      math: {
+        title: "Math Chapters",
+        items: {
+          "Rational Numbers": "#",
+          "Linear Equations in One Variable": "#",
+          "Understanding Quadrilaterals": "#",
+          "Practical Geometry": "#",
+          "Data Handling": "#",
+          "Squares and Square Roots": "#",
+          "Cubes and Cube Roots": "#",
+          "Comparing Quantities": "#"
+        }
+      },
+      sst: {
+        title: "Social Studies Chapters",
+        items: {
+          "How, When and Where": "#",
+          "From Trade to Territory": "#",
+          "Ruling the Countryside": "#",
+          "Tribals, Dikus, and the Vision of a Golden Age": "#",
+          "When People Rebel": "#",
+          "Colonialism and the City": "#",
+          "Weavers, Iron Smelters, and Factory Owners": "#"
+        }
+      }
+    };
+
+    function showChapters(subject) {
+      const subjectData = chapters[subject];
+      document.getElementById('subject-section').classList.add('hidden');
+      document.getElementById('chapter-section').classList.remove('hidden');
+      document.getElementById('chapter-title').textContent = subjectData.title;
+      const chapterList = document.getElementById('chapter-list');
+      chapterList.innerHTML = '';
+
+      Object.entries(subjectData.items).forEach(([chapter, link]) => {
+        const chapterCard = document.createElement('div');
+        chapterCard.classList.add('card');
+        chapterCard.textContent = chapter;
+        chapterCard.onclick = () => {
+          if (link !== "#") {
+            window.open(link, '_blank');
+          } else {
+            alert("Resource not yet available!");
+          }
+        };
+        chapterList.appendChild(chapterCard);
+      });
+    }
+
+    function goBackToSubjects() {
+      document.getElementById('subject-section').classList.remove('hidden');
+      document.getElementById('chapter-section').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

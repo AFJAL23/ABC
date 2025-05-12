@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abc Learning | Login</title>
+  <style>
+    :root {
+      --bg-light: linear-gradient(to right, #f9f9f9, #e0eafc);
+      --bg-dark: linear-gradient(to right, #1f1f1f, #2c3e50);
+      --card-bg-light: #ffffff;
+      --card-bg-dark: #2c2c2c;
+      --text-light: #1a1a1a;
+      --text-dark: #f0f0f0;
+      --primary: #4a90e2;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--card-bg-light);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      transition: background 0.3s;
+    }
+
+    .dark-mode .card {
+      background: var(--card-bg-dark);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #357bd8;
+    }
+
+    .signup {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .signup a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .toggle-btn {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="logo">Abc Learning</div>
+      <h2>Login</h2>
+      <form onsubmit="return handleLogin(event)">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div class="signup">
+        Don’t have an account? <a href="signup.html">Sign Up</a><br>
+        <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+      </div>
+      <button class="toggle-btn" onclick="toggleMode()">Toggle Dark Mode</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "9525988087" && password === "12345678") {
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
